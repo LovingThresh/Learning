@@ -1,8 +1,7 @@
 #ifndef QUEUE_H
 #define QUEUE_H
 // #include <random>
-#include <cstdlib>
-#include <ctime>
+
 class Customer
 {
 private:
