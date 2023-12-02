@@ -7,7 +7,8 @@ include_directories("D:/C++/Eigen")
 include_directories("D:/C++/boost_1_83_0/boost-windows-x86_64-gcc/include/boost-1_83")
 add_subdirectory(Chapter3)
 add_subdirectory(Chapter4)
-add_executable(Learning Chapter2/Exercise_2_5.cpp)
+add_executable(Learning Chapter2/Exercise_2_5.cpp
+        main.cpp)
         # Timer/Timer_function.cpp
         # Chapter4/Stack.cpp
         # Chapter4/Stack.h

@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(Learning_Chapter4 main.cpp
         Queue.cpp
         Queue.h
+        Stack.h
+        Stack.cpp
 )
 
 #- `a`: 在光标后插入文本

@@ -8,6 +8,7 @@
 #include <vector>
 using namespace std;
 
+namespace regular{
 class Stack {
 
 public:
@@ -26,7 +27,21 @@ public:
 private:
     vector<string> _stack;
 };
+}
 
-
+namespace stack_templated{
+    template <class Type, int Max>
+    class Stack_Temlated {
+    private:
+        Type items[Max];
+        int top;
+    public:
+        Stack_Temlated(){top=0;}
+        [[nodiscard]] bool isempty() const {return top==0;}
+        [[nodiscard]] bool isfull() const {return top==Max;}
+        bool push(const Type &item);
+        bool pop(Type &item);
+};
+}
 
 #endif //STACK_H

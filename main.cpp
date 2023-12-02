@@ -1,9 +1,9 @@
 #include <iostream>
 #include <limits>
-#include "Chapter2/Exercise_2.h"
+// #include "Chapter2/Exercise_2.h"
 #include "OOP_Learning/Stock.h"
 
-double Fibonacci(unsigned int n)
+double Fibonacci(const unsigned int n)
 {
     using namespace std;
     double f_n = 0;
@@ -11,8 +11,8 @@ double Fibonacci(unsigned int n)
     double f_n2 = 1;
     bool find_int = false;
 
-    unsigned int max_unsigned_int = numeric_limits<unsigned int>::max();
-    int max_int = numeric_limits<int>::max();
+    constexpr unsigned int max_unsigned_int = numeric_limits<unsigned int>::max();
+    constexpr int max_int = numeric_limits<int>::max();
 
     for(int k=3; k<=n; k++) {
         f_n  = f_n1 + f_n2;
