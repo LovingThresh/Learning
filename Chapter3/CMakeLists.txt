@@ -8,4 +8,5 @@ add_executable(LearningChapter3 main.cpp
         Chapter3_1.cpp
         Chapter3.h
 )
+add_executable(Exercise_3_2 Chapter_3.cpp)
 add_executable(LearningIterator iterator.cpp)
