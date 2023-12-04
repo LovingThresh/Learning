@@ -16,8 +16,8 @@
 // 练习 1.1
 void pointer_array() {
     using namespace std;
-    short dates[4], *pti, index;
-    double bills[4], *ptf;
+    short dates[4], index;
+    double bills[4];
     cout << "               short     double\n";
     for (index = 0; index < 4; index++)
         cout << "array name + " << index << "  " << dates + index << " " // 思考dates的含义,dates是数组名(指针)
@@ -25,8 +25,8 @@ void pointer_array() {
              << bills + index << endl;
     // short 2 bits
 
-    pti = dates;
-    ptf = bills;
+    const short(*pti) = dates;
+    const double (*ptf) = bills;
     cout << "\n               short      double\n";
     for (index = 0; index < 4; index++)
         cout << "pointers + " << index << "  " << pti + index << " "
@@ -56,15 +56,12 @@ void pointer_visit_array(){
 void pointer_string(){
     using namespace std;
     char animal[20] = "bear"; // "bear"的末位是'\0'
-    char new_animal[20];
-    const char *bird = "wren";
+    const auto *bird = "wren";
     char *ps;
-    double *pd;
-    int *pi;
 
     cout << sizeof(ps) << endl; // 8
-    cout << sizeof(pd) << endl; // 8
-    cout << sizeof(pi) << endl; // 8
+    // cout << sizeof(pd) << endl; // 8
+    // cout << sizeof(pi) << endl; // 8
 
     cout << '\n' << animal << " and " << bird << "\n";
     // cout << ps << endl; // 随处地址，不知道它指向什么东西，输出的东西是完全不可控的
@@ -79,14 +76,14 @@ void pointer_string(){
 
     cout << ps << "!\n";
     cout << "Before using strcpy():\n";
-    cout << animal << " at " << (int *) animal << endl; // (int *) animal强制类型转换
-    cout << ps << " at " << (int *) ps << endl; // (int *) ps强制类型转换
+    cout << animal << " at " << (int *) &animal << endl; // (int *) animal强制类型转换
+    cout << ps << " at " << reinterpret_cast<int*>( ps ) << endl; // (int *) ps强制类型转换
 
     ps = new char[strlen(animal) + 1]; // 新申请到的内存空间，不会被初始化
     strcpy(ps, animal); // 将animal的内容复制到ps指向的内存空间
     cout << "After using strcpy():\n";
-    cout << animal << " at " << (int *) animal << endl;
-    cout << ps << " at " << (int *) ps << endl;
+    cout << animal << " at " << (int *) &animal << endl;
+    cout << ps << " at " << reinterpret_cast<int*>( ps )<< endl;
 
     // cout << strlen(animal) << endl;
     delete [] ps; // 释放ps指向的内存空间
@@ -100,12 +97,11 @@ void dynamic_strc(){
         double price;
     };
     using namespace std;
-    inflatable *ptr; // 申请一个inflatable大小的内存空间
-    ptr = new inflatable; // 申请一个inflatable大小的内存空间
+    auto *ptr = new inflatable;  // 申请一个inflatable大小的内存空间
 
-    (*ptr).volume = 10.0; // (*ptr)是一个inflatable类型的变量
+    // (*ptr).volume = 10.0; // (*ptr)是一个inflatable类型的变量
     // -> 是一个运算符，用于访问结构体指针指向的成员
-    ptr -> volume = 10.0; // ptr->volume是一个inflatable类型的变量
+    ptr->volume = 10.0; // ptr->volume是一个inflatable类型的变量
 
     delete ptr; // 释放ptr指向的内存空间
 }
@@ -152,14 +148,12 @@ void get_user_name() {
 // 练习 1.6
 void get_int_number(){
     using namespace std;
-    const int max_array_size = 100;
+    constexpr  int max_array_size = 100;
 
     int number;
     int number_array[max_array_size];
     int number_sum_vector = 0;
     int number_sum_array = 0;
-    float number_average_vector;
-    float number_average_array;
 
     vector<int> int_number_vector;
 
@@ -177,10 +171,10 @@ void get_int_number(){
     cout << "The size of int_number_vector is " << int_number_vector.size() << endl;
 
     // 范围-based for 循环（也称为范围for循环或foreach循环），用于遍历容器中的元素
-    for (int i : int_number_vector){
+    for (const int i : int_number_vector){
         number_sum_vector += i;
     }
-    number_average_vector = static_cast<float> (number_sum_vector) / static_cast<float> (int_number_vector.size());
+    const float number_average_vector = static_cast<float> (number_sum_vector) / static_cast<float> (int_number_vector.size());
 
     cout << "The sum of int_number_vector is " << number_sum_vector << endl;
     cout << "The average of int_number_vector is " << number_average_vector << endl;
@@ -207,7 +201,7 @@ void get_int_number(){
     for (int j = 0; j < i; j++){
         number_sum_array += number_array[j];
     }
-    number_average_array = static_cast<float> (number_sum_array) / static_cast<float> (i);
+    const float number_average_array = static_cast<float> (number_sum_array) / static_cast<float> (i);
 
     cout << "The sum of number_array is " << number_sum_array << endl;
     cout << "The average of number_array is " << number_average_array << endl;
@@ -221,7 +215,6 @@ void string_read() {
     ifstream infile("D:/development/CPP_Projects/Learning/Chapter1/string_exercise.txt");
     ofstream outfile("D:/development/CPP_Projects/Learning/Chapter1/string_exercise_out.txt");
     vector<string> infile_string;
-    string character;
 
 
     if(!infile)
@@ -231,6 +224,7 @@ void string_read() {
 
     else
     {
+        string character;
          while (infile >> character)
         {
             infile_string.push_back(character);
@@ -263,8 +257,6 @@ void each_string_read() {
     ifstream infile("D:/development/CPP_Projects/Learning/Chapter1/string_exercise.txt");
     ofstream outfile("D:/development/CPP_Projects/Learning/Chapter1/string_exercise_out.txt");
     vector<string> infile_string;
-    char character;
-
 
     if(!infile)
     {
@@ -272,7 +264,7 @@ void each_string_read() {
     }
 
     else
-    {
+    {   char character;
         while (infile.get(character)){
             string char_string(1, character);
             infile_string.push_back(char_string);
@@ -309,13 +301,13 @@ void guess_number(){
     int num_tries = 0;
     int num_rights = 0;
 
-    string string_seq[4] = {"Don't worry, you're getting closer with each guess. Keep trying!",
+    const string string_seq[4] = {"Don't worry, you're getting closer with each guess. Keep trying!",
                             "It's just a game of numbers, and you're doing great. Guess again!",
                             "Remember, every wrong guess is a step towards the right one. You've got this!",
                             "Stay positive! The fun is in the challenge, and your next guess might be the one!"};
 
-    const int seq_size = 18;
-    int algorithm_seq[seq_size] = {1, 2, 3, // Fibonacci sequence
+    constexpr  int seq_size = 18;
+    const int algorithm_seq[seq_size] = {1, 2, 3, // Fibonacci sequence
                               3, 4, 7, // Lucas sequence
                               2, 5, 12, // Pell sequence
                               3, 6, 10, // Triangular sequence
@@ -398,8 +390,8 @@ void guess_number(){
 
 // Eigen库的使用
 int core() {
-    const double QUARTER_PI = 45.0 * M_PI / 180.0;
-    const double HALF_PI = 90.0 * M_PI / 180.0;
+    constexpr double QUARTER_PI = 45.0 * M_PI / 180.0;
+    constexpr double HALF_PI = 90.0 * M_PI / 180.0;
 
     Eigen::Vector<double, 3> point(2, 1, 1);
     Eigen::Matrix3d matrix45;
