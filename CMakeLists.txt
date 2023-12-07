@@ -36,6 +36,7 @@ endif()
 add_subdirectory(Chapter3)
 add_subdirectory(Chapter4)
 add_subdirectory(Chapter-boost)
+add_subdirectory(Employee)
 add_executable(Learning Chapter2/Exercise_2_5.cpp
         main.cpp
         Chapter1/Exercise_1.cpp
