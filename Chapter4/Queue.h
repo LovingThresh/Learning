@@ -39,8 +39,8 @@ public:
     [[nodiscard]] bool isfull() const;
     [[nodiscard]] bool isempty() const;
     [[nodiscard]] int queuecount() const;
-    bool enqueue(const Item &item); // 链表 末尾添加
-    bool dequeue(Item &item); // 链表 先进先出
+    [[nodiscard]] bool enqueue(const Item &item); // 链表 末尾添加
+    [[nodiscard]] bool dequeue(Item &item); // 链表 先进先出
 };
 template<typename Item>
 Queue<Item>::~Queue() {
