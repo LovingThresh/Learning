@@ -1,7 +1,7 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.27)
 project(Learning)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 include_directories("D:/C++/Eigen")
 #include_directories("D:/C++/boost_1_83_0/boost-windows-x86_64-gcc/include/boost-1_83")
