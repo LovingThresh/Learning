@@ -1,7 +1,7 @@
 //
 // Created by liuye on 2023/12/7.
 //
-#include "employee.h"
+#include "Employee.h"
 #include <iostream>
 #include <format>
 
@@ -34,6 +34,7 @@ namespace Records {
         cout << "------------------" << endl;
         cout << (isHired() ? "Current Employee" : "Former Employee") << endl;
         cout << format("Employee Number: {}", getEmployeeNumber()) << endl;
+        cout << "------------------" << endl;
         cout << endl;
     }
 
