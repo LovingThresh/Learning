@@ -37,8 +37,10 @@ int main() {
                 break;
             case 5:
                 employeeDB.displayCurrent();
+                break;
             case 6:
                 employeeDB.displayFormer();
+                break;
             default:
                 cerr << "Unknown command." << endl;
                 break;
