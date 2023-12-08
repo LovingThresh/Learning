@@ -1,9 +1,9 @@
 //
 // Created by liuye on 2023/12/7.
 //
-module employee;
-import <iostream>;
-import <format>;
+#include "employee.h"
+#include <iostream>
+#include <format>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ namespace Records {
     void Employee::display() const {
         cout << format("Employee: {}, {}", getLastName(), getFirstName()) << endl;
         cout << "------------------" << endl;
-        cout << (isHred() ? "Current Employee" : "Former Employee") << endl;
+        cout << (isHired() ? "Current Employee" : "Former Employee") << endl;
         cout << format("Employee Number: {}", getEmployeeNumber()) << endl;
         cout << endl;
     }
@@ -61,7 +61,7 @@ namespace Records {
         return m_salary;
     }
 
-    bool Employee::isHred() const {
+    bool Employee::isHired() const {
         return m_hired;
     }
 

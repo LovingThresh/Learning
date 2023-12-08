@@ -3,7 +3,12 @@
 // #include "Chapter2/Exercise_2.h"
 #include "OOP_Learning/Stock.h"
 // #include "boost/math/complex.hpp"
+#include <concepts>
 
+template<typename T>
+concept Addable = requires(T a, T b) {
+    a + b;
+};
 double Fibonacci(const unsigned int n)
 {
     using namespace std;
@@ -30,11 +35,14 @@ double Fibonacci(const unsigned int n)
     }
     return f_n;
 }
+// tex.c
+#include <cstdio>
 
 int main() {
     using namespace std;
     system("chcp 65001");
     cout << "Hello, World!" << endl;
+    printf("Hello World\n");
     // Chapter1 ------------------
     // pointer_array();
     // pointer_visit_array();
@@ -50,12 +58,12 @@ int main() {
     // fibon_print_serise();
     // fibon_print_continue();
     // cout << Fibonacci(1024) << endl;
-    for (int i = 0; i<10; i++){
-        cout << i << endl;
-    }
-    for (int i = 0; i < 10; ++i) {
-        cout << i << endl;
-    }
+    // for (int i = 0; i<10; i++){
+    //     cout << i << endl;
+    // }
+    // for (int i = 0; i < 10; ++i) {
+    //     cout << i << endl;
+    // }
     // Stock fluffy_the_cat;
     // Stock *ps1 = &fluffy_the_cat, *ps2;
     // ps1 -> acquire("NanoSmart", 20, 12.50);
@@ -65,5 +73,8 @@ int main() {
     // ps2 -> show();
     // delete ps2;
     // Stock st1("comp1", 20, 3.4);
+
+    static_assert(Addable<int>);
+
     return 0;
 }

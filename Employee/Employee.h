@@ -1,14 +1,16 @@
 //
 // Created by liuye on 2023/12/7.
 //
+#ifndef EMPLOYEE_H
+#define EMPLOYEE_H
 
-export module employee;
-import <string>;
+#include "Employee.h"
+#include <iostream>
 
 namespace Records {
     constexpr int DefaultStartingSalary {30'000};
-    export constexpr int DefaultRaiseAndDeneritAmount {1'000};
-    export class Employee {
+    constexpr int DefaultRaiseAndDeneritAmount {1'000};
+    class Employee {
     public:
         Employee(const std::string& firstName,
             const std::string& lastName);
@@ -32,7 +34,7 @@ namespace Records {
         void setSalary(int newSalary);
         [[nodiscard]] int getSalary() const;
 
-        [[nodiscard]] bool isHred() const;
+        [[nodiscard]] bool isHired() const;
 
     private:
         std::string m_firstName;
@@ -42,3 +44,4 @@ namespace Records {
         bool m_hired { false };
     };
 }
+#endif
