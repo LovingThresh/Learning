@@ -37,12 +37,13 @@ add_subdirectory(Chapter3)
 add_subdirectory(Chapter4)
 #add_subdirectory(Chapter-boost)
 add_subdirectory(Employee)
-add_executable(Learning main.cpp
+add_executable(Learning main.cpp)
+        # main.cpp
         # Chapter2/Exercise_2_5.cpp
 #        Chapter1/Exercise_1.cpp
 #        Chapter2/Exercise_2.cpp
 #        Chapter2/Exercise_2_2.cpp
-        )
+#        )
 
         # Timer/Timer_function.cpp
         # Chapter4/Stack.cpp
