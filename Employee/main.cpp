@@ -5,8 +5,7 @@
 #include <stdexcept>
 #include <format>
 #include <string>
-#include "Database.h"
-#include "Employee.h"
+#include "Database.hpp"
 
 
 using namespace std;

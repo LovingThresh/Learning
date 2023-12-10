@@ -2,7 +2,7 @@
 // Created by liuye on 2023/11/20.
 //
 #include <iostream>
-#include "Stock.h"
+#include "Stock.hpp"
 
 void Stock::acquire(const std::string &co, long n, double pr) {
 

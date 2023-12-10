@@ -2,7 +2,7 @@
 // Created by liuye on 2023/11/27.
 //
 
-#include "Stack.h"
+#include "Stack.hpp"
 namespace regular {
     Stack::Stack() {
         _stack = {};

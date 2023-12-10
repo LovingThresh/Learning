@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 // #include "Chapter2/Exercise_2.h"
-#include "OOP_Learning/Stock.h"
+#include "OOP_Learning/Stock.hpp"
 // #include "boost/math/complex.hpp"
 #include <concepts>
 

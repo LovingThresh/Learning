@@ -1,7 +1,7 @@
 #include <limits>
 #include <iostream>
 #include <ctime>
-#include "Queue.h"
+#include "Queue.hpp"
 
 constexpr int MIN_PER_HR = 60;
 

@@ -4,7 +4,6 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
 
-#include "Employee.h"
 #include <iostream>
 
 namespace Records {

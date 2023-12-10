@@ -1,7 +1,7 @@
 #include <string>
 #include <iostream>
 
-#include "./Chapter3.h"
+#include "./Chapter3.hpp"
 
 const int* findvalue_const_ptr(const std::vector<int> &vec, const int value) {
     for (const int vector_elem: vec) {
