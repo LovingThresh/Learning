@@ -6,7 +6,7 @@
 #define DATABASE_H
 #include <string>
 #include <vector>
-
+#include <memory>
 #include "Employee.hpp"
 
 namespace Records {

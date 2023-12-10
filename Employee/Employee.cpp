@@ -1,17 +1,18 @@
 //
 // Created by liuye on 2023/12/7.
 //
-#include "Employee.hpp"
 #include <iostream>
 #include <format>
+#include <utility>
+
+#include "Employee.hpp"
 
 using namespace std;
 
 namespace Records {
-    Employee::Employee(const string& firstName,
-        const string& lastName):
-        m_firstName {firstName},
-        m_lastName {lastName} {
+    Employee::Employee(string  firstName, string  lastName):
+        m_firstName {std::move(firstName)},
+        m_lastName {std::move(lastName)} {
     }
     void Employee::promote(const int raiseAmount) {
         setSalary(getSalary() + raiseAmount);

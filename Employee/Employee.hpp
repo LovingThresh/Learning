@@ -11,8 +11,7 @@ namespace Records {
     constexpr int DefaultRaiseAndDeneritAmount {1'000};
     class Employee {
     public:
-        Employee(const std::string& firstName,
-            const std::string& lastName);
+        Employee(std::string  firstName, std::string  lastName);
         void promote(int raiseAmount = DefaultRaiseAndDeneritAmount);
         void demote(int demeritAmount = DefaultRaiseAndDeneritAmount);
         void hire();
