@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(Learning_Chapter3 main.cpp
         Chapter3_1.cpp
-        Chapter3.h
+        Chapter3.hpp
 )
 add_executable(Exercise_3_2 Chapter_3.cpp)
 add_executable(Learning_Iterator iterator.cpp)

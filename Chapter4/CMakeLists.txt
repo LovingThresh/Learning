@@ -4,8 +4,8 @@ project(Learning_Chapter4)
 set(CMAKE_CXX_STANDARD 20)
 add_executable(Learning_Chapter4 main.cpp
         Queue.cpp
-        Queue.h
-        Stack.h
+        Queue.hpp
+        Stack.hpp
         Stack.cpp
 )
 

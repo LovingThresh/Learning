@@ -13,7 +13,7 @@ include_directories("D:/C++/boost_1_83_0/boost-windows-x86_64-gcc/include/boost-
 #set(ENV{BOOST_LIBRARYDIR} "D:/C++/boost_1_83_0/stage/lib")
 
 #set(Boost_LIBRARYDIR "D:/C++/boost_1_83_0/stage/lib")
-#set(Boost_LIB_PREFIX "lib")
+#set(Boost_LIB_PREFIX "lib"r
 #set(Boost_ARCHITECTURE "-x64")
 
 #find_package(Boost 1.83 REQUIRED)
@@ -32,7 +32,6 @@ include_directories("D:/C++/boost_1_83_0/boost-windows-x86_64-gcc/include/boost-
 #include_directories("D:/C++/boost_1_83_0")
 #link_directories("D:/C++/boost_1_83_0/boost-windows-x86_64-gcc/lib")
 
-
 add_subdirectory(Chapter3)
 add_subdirectory(Chapter4)
 #add_subdirectory(Chapter-boost)
@@ -47,16 +46,16 @@ add_executable(Learning main.cpp)
 
         # Timer/Timer_function.cpp
         # Chapter4/Stack.cpp
-        # Chapter4/Stack.h
+        # Chapter4/Stack.hpp
         # Chapter4/Queue.cpp
-        # Chapter4/Queue.h
+        # Chapter4/Queue.hpp
         # Chapter4/main.cpp)
 #        Chapter2/Exercise_2_2.cpp
 #        Chapter1/Exercise_1.cpp
-#        Chapter1/Exercise_1.h
-#        Chapter2/Exercise_2.h
+#        Chapter1/Exercise_1.hpp
+#        Chapter2/Exercise_2.hpp
 #        Chapter2/Exercise_2.cpp
-#        OOP_Learning/Stock.h
+#        OOP_Learning/Stock.hpp
 #        Chapter2/Exercise_2_2.cpp)
 #if(Boost_FOUND)
 #        target_link_libraries(Learning_boost ${Boost_LIBRARIES})
