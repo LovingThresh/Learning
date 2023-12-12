@@ -7,7 +7,7 @@
 
 using namespace std;
 
-namespace Records{
+namespace HR{
     Employee& Database::addEmployee(const std::string&firstName, const std::string&lastname) {
         Employee theEmployee {firstName, lastname};
         theEmployee.setEmployeeNumber(m_nextEmployeeNumber++);
@@ -15,7 +15,8 @@ namespace Records{
         m_employees.push_back(theEmployee);
         return m_employees.back();
     }
-    Employee& Database::getEmployee(const int employeeNumber) {
+    // IDE在此提示可以设置为const是不合理的，因为返回后的Employee是会发生改变的
+    Employee& Database::getEmployee(const int employeeNumber) const {
         for (auto& employee : m_employees) {
             if (employee.getEmployeeNumber() == employeeNumber) {
                 return employee;
@@ -24,7 +25,7 @@ namespace Records{
         throw logic_error("No employee found.");
     }
 
-    Employee& Database::getEmployee(const std::string& firstName, const std::string& lastname) {
+    Employee& Database::getEmployee(const std::string& firstName, const std::string& lastname) const {
         for (auto& employee : m_employees) {
             if ((employee.getFirstName() == firstName) && (employee.getLastName() == lastname)) {
                 return employee;

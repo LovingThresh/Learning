@@ -9,7 +9,7 @@
 
 
 using namespace std;
-using namespace Records;
+using namespace HR;
 
 int displayMenu();
 void doHire(Database& db);

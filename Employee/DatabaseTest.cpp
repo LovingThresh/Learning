@@ -5,7 +5,7 @@
 #include "Database.hpp"
 
 using namespace std;
-using namespace Records;
+using namespace HR;
 
 int main() {
     Database myDB;
