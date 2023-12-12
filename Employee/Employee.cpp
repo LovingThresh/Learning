@@ -87,7 +87,12 @@ namespace HR {
     }
 
     std::optional<std::string> Employee::getNickName() const {
-        return (m_nickName.empty() ? std::nullopt : m_nickName);
+        // return (m_nickName.empty() ? std::nullopt : m_nickName);
+        if (m_nickName.empty()) {
+            return std::nullopt;
+        } else {
+            return m_nickName;
+        }
     }
 
     bool Employee::isHired() const {
