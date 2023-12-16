@@ -10,3 +10,4 @@ add_executable(Learning_Chapter3 main.cpp
 )
 add_executable(Exercise_3_2 Chapter_3.cpp)
 add_executable(Learning_Iterator iterator.cpp)
+add_executable(Learning_iosIterator iostreamIterator.cpp)
