@@ -6,8 +6,15 @@
 #include <boost/json/src.hpp>
 #include <boost/math/ccmath/sqrt.hpp>
 #include <iostream>
+#include <iostream>
 
+using namespace std;
 int main() {
+    char** env = environ;
+    while (*env != nullptr) {
+        std::cout << *env << std::endl;
+        ++env;
+    }
     // 创建一个 JSON 对象
     boost::json::object person;
     std::cout << boost::math::ccmath::sqrt(10) << std::endl;

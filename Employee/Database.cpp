@@ -17,9 +17,11 @@ namespace HR{
     }
     // IDE在此提示可以设置为const是不合理的，因为返回后的Employee是会发生改变的
     Employee& Database::getEmployee(const int employeeNumber) const {
+        // 所有的成员变量默认是const
         for (auto& employee : m_employees) {
             if (employee.getEmployeeNumber() == employeeNumber) {
-                return employee;
+                return employee; // employee是从 const m_employees 中拷贝出来的
+                                 // 这就与函数定义不符，所以m_employees必须是mutable的
             }
         }
         throw logic_error("No employee found.");

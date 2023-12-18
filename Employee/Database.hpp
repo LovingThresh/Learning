@@ -21,7 +21,7 @@ namespace HR {
         void displayFormer() const ;
 
     private:
-        mutable std::vector<Employee> m_employees;
+        mutable std::vector<Employee> m_employees; // 思考：m_employees是否影响Database的抽象
         int m_nextEmployeeNumber {FirstEmployeeNumber};
     };
 }

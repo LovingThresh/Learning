@@ -16,7 +16,8 @@ set(BOOST_COMPONENTS date_time chrono filesystem iostreams regex system thread j
 find_package(Boost 1.83.0 REQUIRED COMPONENTS ${BOOST_COMPONENTS})
 add_executable(Learning_boost Learning_boost.cpp)
 
-target_link_libraries(Learning_boost PRIVATE Boost::boost Boost::json Boost::filesystem Boost::system Boost::date_time Boost::chrono Boost::iostreams Boost::regex Boost::thread)
+#target_link_libraries(Learning_boost PRIVATE Boost::boost Boost::json Boost::filesystem Boost::system Boost::date_time Boost::chrono Boost::iostreams Boost::regex Boost::thread)
+target_link_libraries(Learning_boost PRIVATE Boost::boost Boost::json)
 #target_link_libraries(Learning_boost PRIVATE Boost::boost Boost::json ${Boost_FILESYSTEM_LIBRARIES} ${Boost_SYSTEM_LIBRARIES} ${Boost_JSON_LIBRARIES} ${Boost_LIBRARIES} ${Boost_INCLUDE_DIRS} )
 #target_link_libraries(Learning_boost PRIVATE Boost::system Boost::filesystem Boost::json)
 #target_include_directories(Learning_boost PRIVATE ${Boost_INCLUDE_DIRS})
