@@ -13,7 +13,7 @@ set(CMAKE_CXX_STANDARD 20)
 #
 set(Boost_USE_STATIC_LIBS ON)
 set(BOOST_COMPONENTS date_time chrono filesystem iostreams regex system thread json)
-find_package(Boost 1.83.0 REQUIRED COMPONENTS ${BOOST_COMPONENTS})
+find_package(Boost REQUIRED COMPONENTS ${BOOST_COMPONENTS})
 add_executable(Learning_boost Learning_boost.cpp)
 
 #target_link_libraries(Learning_boost PRIVATE Boost::boost Boost::json Boost::filesystem Boost::system Boost::date_time Boost::chrono Boost::iostreams Boost::regex Boost::thread)
