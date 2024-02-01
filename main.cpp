@@ -6,11 +6,12 @@
 #include <concepts>
 
 template<typename T>
-concept Addable = requires(T a, T b) {
+concept Addable = requires(T a, T b)
+{
     a + b;
 };
-double Fibonacci(const unsigned int n)
-{
+
+double Fibonacci(const unsigned int n) {
     using namespace std;
     double f_n = 0;
     double f_n1 = 1;
@@ -20,21 +21,22 @@ double Fibonacci(const unsigned int n)
     constexpr unsigned int max_unsigned_int = numeric_limits<unsigned int>::max();
     constexpr int max_int = numeric_limits<int>::max();
 
-    for(int k=3; k<=n; k++) {
-        f_n  = f_n1 + f_n2;
+    for (int k = 3; k <= n; k++) {
+        f_n = f_n1 + f_n2;
         f_n2 = f_n1;
         f_n1 = f_n;
-        if (f_n > max_int && !find_int){
-            cout << "max int 在Fibonacci数列的位置为" << k-1 << endl;
+        if (f_n > max_int && !find_int) {
+            cout << "max int 在Fibonacci数列的位置为" << k - 1 << endl;
             find_int = true;
         }
-        if (f_n > max_unsigned_int){
-            cout << "max unsigned int 在Fibonacci数列的位置为" << k-1 << endl;
+        if (f_n > max_unsigned_int) {
+            cout << "max unsigned int 在Fibonacci数列的位置为" << k - 1 << endl;
             break;
         }
     }
     return f_n;
 }
+
 // tex.c
 #include <cstdio>
 
@@ -74,7 +76,11 @@ int main() {
     // delete ps2;
     // Stock st1("comp1", 20, 3.4);
 
-    static_assert(Addable<int>);
+    // static_assert(Addable<int>);
 
+    constexpr int myIntArray[10]{};
+    std::cout << myIntArray << std::endl;
+    std::cout << myIntArray[0] << std::endl;
+    std::cout << &myIntArray[0] << std::endl;
     return 0;
 }
